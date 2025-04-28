@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UIUC RSO Explorer</title>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #13294B;
+      color: #F5F5F5;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      color: #FF552E;
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+    img {
+      width: 100px;
+      margin-bottom: 20px;
+    }
+    .button-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 30px;
+    }
+    button {
+      background-color: #FF552E;
+      border: none;
+      color: white;
+      padding: 15px 30px;
+      margin: 10px;
+      border-radius: 8px;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    button:hover {
+      background-color: #e0441f;
+      transform: translateY(-3px);
+    }
+    iframe {
+      margin-top: 30px;
+      width: 90%;
+      height: 700px;
+      border: 2px solid #FF552E;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <img src="logo.png" alt="UIUC RSO Explorer Logo" class="logo">
+  <h1>UIUC RSO Explorer</h1>
+
+  <div class="button-container">
+    <button onclick="loadGraph('advocacy_activism.html')">Advocacy & Activism</button>
+    <button onclick="loadGraph('arts.html')">Arts</button>
+    <button onclick="loadGraph('business.html')">Business</button>
+    <button onclick="loadGraph('frat_sorority.html')">Fraternities & Sororities</button>
+    <button onclick="loadGraph('health_wellness.html')">Health, Community & Wellness</button>
+    <button onclick="loadGraph('social_sciences.html')">Social Sciences</button>
+    <button onclick="loadGraph('sports.html')">Sports</button>
+    <button onclick="loadGraph('stem_science.html')">STEM & Science</button>
+  </div>
+
+  <iframe id="graphFrame" src="" style="display:none;"></iframe>
+
+  <script>
+    function loadGraph(graphFile) {
+      var frame = document.getElementById('graphFrame');
+      frame.src = graphFile;
+      frame.style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
